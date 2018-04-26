@@ -27,19 +27,11 @@ for ii=k+1:mm+k
         done=abs(level-levelnext)<0.5;
         level=levelnext;
         end
-        newA2(ii,jj)=~(A2(ii,jj)>(level-55));%% dark object with bright BG, threshold one pixel at each iteration
-%         newA2(ii,jj)=~(A2(ii,jj)>(level-15)); 
+        newA2(ii,jj)=~(A2(ii,jj)>(level-55));% dark object with bright BG, threshold one pixel at each iteration, the calculated threshold is
+       %adjusted to minimize false detection
     end
 end
 newA=newA2(k+1:mm+k,p+1:nn+p);
 
 newA=logical(newA);
-% 
-% sobelImage = imgradient(grayImage, 'Sobel');
-% sdImage = stdfilt(sobelImage, ones(9));
-% % Do a global Otsu of the stddev image.
-% 
-% binaryImage = sdImage > 25; %% adjustable, based on SNR
-% 
-% thresholded = (newA&binaryImage);
 thresholded = newA;
