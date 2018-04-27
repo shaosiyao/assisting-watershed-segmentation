@@ -6,12 +6,11 @@ close all
 %% Image courtsey: Johns Hopkins University, Joseph Katz group. V1:4.26.2018
 % read grayscale image example
 grayscale=imread('Combined_oil.tif');
-grayscale_rescale=grayscale./(max(grayscale(:))-min(grayscale(:)))*255;
-grayscale_rescale=uint8(grayscale_rescale);
+grayscale_uint8=uint8(grayscale);
 % image enhancement
 C0_STA=3.3;
 LL_GS=30;
-EQGS_STA_SSA=SS_Image_enh2(grayscale_rescale,C0_STA,LL_GS);
+EQGS_STA_SSA=SS_Image_enh2(grayscale_uint8,C0_STA,LL_GS);
 % generate binary image
 m=200;
 n=200;
