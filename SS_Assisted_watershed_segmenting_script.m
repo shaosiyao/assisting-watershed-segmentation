@@ -28,7 +28,7 @@ figure
 imshow(grayscale);
 title('Original grayscale image');
 figure
-imshow(grayscale);
+imshow(EQGS_STA_SSA(1:2000,1:2000));
 hold on
 % measure and plot the best approximation ellipses/circles, please refer to
 % Karn et al. 2015 Chemical Engineering Science for details
