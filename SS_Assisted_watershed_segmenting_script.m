@@ -15,7 +15,6 @@ EQGS_STA_SSA=SS_Image_enh2(grayscale_uint8,C0_STA,LL_GS);
 m=200;
 n=200;
 BW_LO=SS_image_threshold_quick_sliding_Adaptive_intermode(EQGS_STA_SSA(1:2000,1:2000),m,n);
-BW_LO=bwareaopen(BW_LO,4);
 % generate assiting grayscale image through energy calculation, inspired
 % and iterated from Kass 1998 (the Snake algorithm)
 Eext = ExternalForceImage2D(double(EQGS_STA_SSA(1:2000,1:2000)),1,2,1,4);
